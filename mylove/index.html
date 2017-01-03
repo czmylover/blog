@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://www.mylove920.com/study/other/w/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" content="-1">           
+<meta http-equiv="Cache-Control" content="no-cache">           
+<meta http-equiv="Pragma" content="no-cache">
+<meta name="author" content="" nickname="" sole-author="">
+<title>www</title>
+<link rel="stylesheet" type="text/css" href="html5.css">
+<link rel="stylesheet" type="text/css" href="app.css">
+<!--js-->
+<script src="html5.js"></script>
+<script src="jquery-1.10.2.min.js"></script>
+
+<!--插件 Swiper-->
+<link rel="stylesheet" type="text/css" href="swiper.min.css">
+<script src="swiper.jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  var $animate=$(".animate");
+ classArray=$animate.eq(0).attr("data-animate");
+ $animate.eq(0).addClass(classArray);
+  var mySwiper = new Swiper('.swiper-container',{
+    //添加需要的选项:
+    direction:'vertical',
+	onSlideChangeEnd:function(){
+			classArray=$animate.eq(mySwiper.activeIndex).attr("data-animate");
+			$animate.removeClass('opacity top bottom scale-max scale-min').eq(mySwiper.activeIndex).addClass(classArray);
+			if($('.swiper-slide').length-1<=mySwiper.activeIndex){
+					$('.fixed-up').hide();
+			}else{
+				$('.fixed-up').show();
+			}
+		}
+    //等等..
+  });  
+})
+</script>
+<style>
+html{ height:100%;  width:100%;}
+body{ height:100%; width:100%; max-width:480px; overflow:hidden; margin:0 auto; max-width:480px; position:relative;}
+.scroll,.swiper-container,.swiper-wrapper,.swiper-slide,.bg{ width:100%; height:100%;}
+.myheat { text-align:center;}
+.myheat img{ width:39%; border-radius:50%; -webkit-border-radius:50%; margin:50px 0px 30px; border:2px solid #e69c35}
+.img100{ width:100%;}
+.msg-block{ text-align:center; margin:30px;width:40%;}
+.txt-center{ text-align:center;}
+.py{ color:#c75e01; font-size:28px; font-family:'微软雅黑'; padding-bottom:8px;}
+
+/*音乐*/
+.fixed{ position:absolute; right:15px; top:15px; z-index:999; text-align:center;} 
+@font-face {
+  font-family: 'iconfont';
+  src: url('http://at.alicdn.com/t/font_1426837325_0517654.eot'); /* IE9*/
+  src: url('http://at.alicdn.com/t/font_1426837325_0517654.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('http://at.alicdn.com/t/font_1426837325_0517654.woff') format('woff'), /* chrome、firefox */
+  url('http://at.alicdn.com/t/font_1426837325_0517654.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('http://at.alicdn.com/t/font_1426837325_0517654.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.music{ font-family:'iconfont'; font-size:18px; height:32px; width:32px; background:#fff; border-radius:50%; -webkit- border-radius:50%; border:1px solid #ccc; line-height:30px; color:#666; opacity:0.8; overflow:hidden;}
+.music span{ width:100%; height:100%;border-radius:50%; -webkit- border-radius:50%; -webkit-animation:rotate 1000ms linear infinite;animation:rotate 1000ms linear infinite; overflow:hidden; display:block;}
+@-webkit-keyframes rotate{
+0%{ -webkit-transform:rotate(0);}
+100%{ -webkit-transform:rotate(360deg);}
+}
+@keyframes rotate{
+0%{ -webkit-transform:rotate(0);}
+100%{ -webkit-transform:rotate(360deg);}
+}
+
+/*箭头*/
+.fixed-up{ position:absolute;  bottom:0px; z-index:999; text-align:center; width:100%; z-index:9;}
+.fixed-up img{ width:40px;-webkit-animation:top 1500ms linear infinite ;animation:top 1500ms linear infinite;}
+@-webkit-keyframes top{
+0%{ -webkit-transform:translateY(0px); opacity:0;}
+60%{ -webkit-transform:translateY(-10px);opacity:1;}
+100%{ -webkit-transform:translateY(-20px); opacity:0;}
+}
+@keyframes top{
+0%{ -webkit-transform:translateY(0px); opacity:0;}
+60%{ -webkit-transform:translateY(-10px);opacity:1;}
+100%{ -webkit-transform:translateY(-20px); opacity:0;}
+}
+/*内容*/
+.bg{ position:absolute; left:0px; top:0px; bottom:0px; right:0px; z-index:1;}
+.bg01{ background:url(w_bg01.jpg) no-repeat center center; background-size:cover;}
+.bg02{ background:url(w_bg02.jpg) no-repeat center center; background-size:cover;}
+.bg03{ background:url(w_bg03.jpg) no-repeat center center; background-size:cover;}
+.bg04{ background:url(w_bg04.jpg) no-repeat center center; background-size:cover;}
+.bg05{ background:url(w_bg05.jpg) no-repeat center center; background-size:cover;}
+.bg-last{ background:url(w_bg_l.jpg) no-repeat center center; background-size:cover;}
+.bg-bottom{ background-position:center bottom;}
+.bg-top{ background-position:center top;}
+
+.img-position{ position:absolute; z-index:2; top:0px; width:100%;}
+.img-bottom{ bottom:0px; top:auto;}
+.animate-opacity .dong{ opacity:0;}
+.animate-top .dong{ -webkit-transform:translateY(60px);}
+.animate-bottom .dong{-webkit-transform:translateY(-60px);}
+.animate-scale-max .dong{ -webkit-transform:scale(0,0)}
+.animate-scale-min .dong{ -webkit-transform:scale(2,2)}
+.opacity .dong:nth-child(1){ -webkit-transition:all 800ms ease 0ms; opacity:1;}
+.opacity .dong:nth-child(2){ -webkit-transition:all 800ms ease 500ms; opacity:1;}
+.opacity .dong:nth-child(3){ -webkit-transition:all 800ms ease 1400ms; opacity:1;}
+.top .dong,.bottom .dong{ -webkit-transform:translateY(0px);}
+.scale-max .dong,.scale-min .dong{ -webkit-transform:scale(1,1)}
+
+@media screen and (max-height:420px){
+	.myheat img{ margin:30px 0px 15px; }
+	.msg-block{ text-align:center; margin:15px;}
+}
+@media screen and (max-width:480px){
+	.py{ font-size:16px}
+	.fixed-up img{ width:32px;}
+}
+@media screen and (max-height:650px){
+	body{ width:450px;}
+}
+</style>
+</head>
+
+<body>
+<article class="fixed">
+	<!--音乐开始-->
+    <div class="music">
+    	<span></span>
+        <audio src="http://www.mylove920.com/t/music/aihenjiandan.mp3" id="audio" loop="" autoplay=""></audio>
+    </div>
+    <!--音乐结束-->
+</article>
+<article class="fixed-up">
+	<img src="up.png" alt="">
+</article>
+<article class="scroll">
+  <div class="swiper-container swiper-container-vertical">
+    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);"> 
+
+      <div class="swiper-slide swiper-slide-active" style="height: 845px;">
+      	<img src="w_bg01.jpg" data-title="w_bg01-01.png" data-word="w_bg01-02.png" data-animate=" animate img-bottom animate-opacity animate-top animate-scale-max">
+      	<div class="bg bg01 bg-bottom"></div>
+        <div class="img-position animate img-bottom animate-opacity animate-top animate-scale-max opacity top scale-max" data-animate="opacity top scale-max">
+        	<img src="w_bg01-01.png" class="dong img100">
+            <img src="w_bg01-02.png" class="dong img100">
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper-slide-next" style="height: 845px;">
+      	
+      	<div class="bg bg02"></div>
+        <div class="img-position animate  img-bottom animate-opacity animate-top animate-scale-min" data-animate="opacity top scale-min">
+        	<img src="w_bg02-01.png" class="dong img100">
+            <img src="w_bg02-02.png" class="dong img100">
+        </div>
+      </div>
+      
+      <div class="swiper-slide" style="height: 845px;">
+      	<div class="bg bg03"></div>
+        <div class="img-position animate animate-opacity animate-bottom" data-animate="opacity bottom scale-max">
+        	<img src="w_bg03-01.png" class="dong img100">
+        </div>
+      </div>
+      
+      <div class="swiper-slide" style="height: 845px;">
+      	<div class="bg bg04"></div>
+        <div class="img-position animate img-bottom animate-opacity animate-top" data-animate="opacity top">
+        	<img src="w_bg04-01.png" class="dong img100">
+        </div>
+      </div>
+      
+      <div class="swiper-slide" style="height: 845px;">
+      	<div class="bg bg05"></div>
+        <div class="img-position animate animate-opacity animate-top" data-animate="opacity top">
+        	<img src="w_bg05-01.png" class="dong img100">
+        </div>
+      </div>
+      
+      <div class="swiper-slide" style="height: 845px;">
+      	<div class="bg bg-last"></div>
+        <div class="img-position txt-center">
+        	
+            <div class="animate animate-opacity animate-top" data-animate="opacity top">
+            	<div class="myheat">
+            		<img src="w.jpg" style=" " class="dong">
+                </div>
+                
+        		<div class="dong">
+                	<!--<p class="py">送呈 陈小姐 台启</p>-->
+                	<img src="w_bg-info.png" class="img100 dong">
+                </div>
+                <img src="w_bg-zhufu.png" class="dong msg-block" alt="">
+
+       		</div>
+            
+        </div>
+  
+      </div>
+      
+    </div>
+    <div class="pagination"></div>
+  </div>
+</article>
+
+
+</body></html>
